@@ -13,14 +13,6 @@ set -o xtrace
 # [bash_init]-[END]
 
 # [certificate]-[BEGIN]
-# [download_and_set_for_system]-[BEGIN]
-wget https://raw.githubusercontent.com/cqr-cryeye-public/cryeye_public_ssl_self_root_ca/main/certs/Cryeye_Self_Root_CA/Cryeye_Self_Root_CA.crt \
---output-document /usr/share/ca-certificates/Cryeye_Self_Root_CA.crt
-
-cp /usr/share/ca-certificates/Cryeye_Self_Root_CA.crt /usr/lib/ssl/certs/Cryeye_Self_Root_CA.crt
-update-ca-certificates
-# [download_and_set_for_system]-[END]
-
 # [set_for_python]-[BEGIN]
 # Do this in venv, if needed.
 python - <<'____HERE'
