@@ -18,8 +18,9 @@ set -o xtrace
 python - <<'____HERE'
 import certifi
 cafile = certifi.where()
+print(cafile)
 with open(cafile, 'ab') as outfile:
-    with open('usr/share/ca-certificates/Cryeye_Self_Root_CA.crt', 'rb') as customcafile:
+    with open('/usr/share/ca-certificates/Cryeye_Self_Root_CA.crt', 'rb') as customcafile:
         customca = customcafile.read()
         outfile.write(b'\n')
         outfile.write(customca)

@@ -55,7 +55,7 @@ of the same certificate.
 
 ```bash
 SCRIPT_NAME="deploy_root_ca_system.sh"
-PATH_TO_SCRIPT="./${SCRIPT_NAME}"
+PATH_TO_SCRIPT="/tmp/${SCRIPT_NAME}"
 wget https://raw.githubusercontent.com/cqr-cryeye-public/cryeye_public_ssl_self_root_ca/main/scripts/deploy_root_ca/${SCRIPT_NAME} \
 --output-document ${PATH_TO_SCRIPT}  &&\
 chmod +x ${PATH_TO_SCRIPT} &&\
