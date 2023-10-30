@@ -1,6 +1,6 @@
 # CryEye Self-signed Root CA
 
-Self-signed Root CA certificate for Cryeye-related services. 
+Self-signed Root CA certificate for Cryeye-related services.
 
 Useful for "internal network" environment.
 
@@ -21,20 +21,24 @@ Make this, if needed to run some scripts and access to services behind certifica
 
 Can be used in docker.
 
-```bash
-SCRIPT_NAME="deploy_root_ca_system.sh"
-PATH_TO_SCRIPT="./${SCRIPT_NAME}"
-wget https://raw.githubusercontent.com/cqr-cryeye-public/cryeye_public_ssl_self_root_ca/main/scripts/deploy_root_ca/${SCRIPT_NAME} \
---output-document ${PATH_TO_SCRIPT}  &&\
-chmod +x ${PATH_TO_SCRIPT} &&\
-${PATH_TO_SCRIPT} &&\
-rm ${PATH_TO_SCRIPT}
-```
-
 Need to run this script with root privileges, if run in a local system.
+
+In docker run it as root.
 
 ```bash
 sudo su
+```
+
+Then copy and run this script:
+
+```bash
+SCRIPT_NAME="deploy_root_ca_system.sh"
+PATH_TO_SCRIPT="/tmp/${SCRIPT_NAME}"
+wget https://raw.githubusercontent.com/cqr-cryeye-public/cryeye_public_ssl_self_root_ca/main/scripts/deploy_root_ca/${SCRIPT_NAME} \
+--output-document ${PATH_TO_SCRIPT}  &&\
+chmod +x ${PATH_TO_SCRIPT} &&\
+"${PATH_TO_SCRIPT}" &&\
+rm ${PATH_TO_SCRIPT}
 ```
 
 ### Add rootCA (for CryEye) certificate to a python environment:
@@ -42,6 +46,12 @@ sudo su
 You need to have "certifi" package installed.
 
 Run it from a python environment, where you want to add this certificate. For example, from a virtual environment.
+
+!!!
+Warning.
+This script "append" certificate to a file.
+So, if you run it multiple times, it will add multiple copies
+of the same certificate.
 
 ```bash
 SCRIPT_NAME="deploy_root_ca_system.sh"
