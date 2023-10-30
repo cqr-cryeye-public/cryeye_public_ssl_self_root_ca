@@ -14,7 +14,7 @@ set -o xtrace
 
 # [certificate]-[BEGIN]
 # [download_and_set_for_system]-[BEGIN]
-wget https://github.com/cqr-cryeye-public/cryeye_public_ssl_self_root_ca/blob/main/certs/Cryeye_Self_Root_CA/Cryeye_Self_Root_CA.crt \
+wget https://raw.githubusercontent.com/cqr-cryeye-public/cryeye_public_ssl_self_root_ca/main/certs/Cryeye_Self_Root_CA/Cryeye_Self_Root_CA.crt \
 --output-document /usr/share/ca-certificates/Cryeye_Self_Root_CA.crt
 
 cp /usr/share/ca-certificates/Cryeye_Self_Root_CA.crt /usr/lib/ssl/certs/Cryeye_Self_Root_CA.crt
