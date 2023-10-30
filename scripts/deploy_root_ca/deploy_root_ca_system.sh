@@ -17,7 +17,7 @@ set -o xtrace
 wget https://raw.githubusercontent.com/cqr-cryeye-public/cryeye_public_ssl_self_root_ca/main/certs/Cryeye_Self_Root_CA/Cryeye_Self_Root_CA.crt \
 --output-document /usr/share/ca-certificates/Cryeye_Self_Root_CA.crt
 
-ln --force --symbolic /usr/share/ca-certificates/Cryeye_Self_Root_CA.crt /usr/lib/ssl/certs/Cryeye_Self_Root_CA.crt
+ln --force --symbolic /usr/share/ca-certificates/Cryeye_Self_Root_CA.crt /usr/lib/ssl/certs/Cryeye_Self_Root_CA.pem
 
 update-ca-certificates
 # [download_and_set_for_system]-[END]
