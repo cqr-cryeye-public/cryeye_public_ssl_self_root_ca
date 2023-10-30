@@ -62,3 +62,17 @@ chmod +x ${PATH_TO_SCRIPT} &&\
 ${PATH_TO_SCRIPT} &&\
 rm ${PATH_TO_SCRIPT}
 ```
+
+For some cases, it can be useful to use environment variable "SSL_CERT_FILE" to specify a path to a certificate file.
+
+```bash
+export SSL_CERT_DIR="/usr/share/ca-certificates/Cryeye_Self_Root_CA.crt"
+```
+
+Also, possible useful commands:
+
+```bash
+python -c "import certifi; print(certifi.where())"
+
+python -c "import ssl;print(ssl.get_default_verify_paths())"
+```
